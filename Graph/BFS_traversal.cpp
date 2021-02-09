@@ -15,20 +15,27 @@ class Graph{
             adj[v].push_back(u);
         }
     }
-    void BFShelper(int src,unordered_map<int,bool>&visited) {
+    void helper(int src,unordered_map<int,bool> &visited) {
         visited[src]=true;
-        cout<<src<<" ";
-        queue<int>q;
-        q.push(src);
-        for(auto i:adj[src]){
-            if(not visited[i]){
-                BFShelper(i,visited);
+        queue<int>qq;
+        qq.push(src);
+        while(not qq.empty()) {
+            int value=qq.front();
+            qq.pop();
+            for(auto neighbour : this->adj[value]) {
+                if(not visited[neighbour]) {
+                    visited[neighbour] =true;
+                    qq.push(neighbour);
+                }
             }
+            cout<<value<<" ";
         }
+        cout<<endl;
     }
-    void BFS(int src){
+
+    void BFS(int src) {
         unordered_map<int,bool>visited;
-        BFShelper(src,visited);
+        helper(src,visited);
     }
 
 };
