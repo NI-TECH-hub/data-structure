@@ -1,6 +1,7 @@
 //SATYAM SINGH  
 // Biparatite graph 
 // problem link -->  https://leetcode.com/problems/possible-bipartition/
+// problem link -->  https://leetcode.com/problems/is-graph-bipartite/
 #include<iostream>
 #include<bits/stdc++.h>
 using namespace std;
